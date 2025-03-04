@@ -1,7 +1,8 @@
 {
-  "name": "@edgarinhm/smtalent-challenge-lib",
+  "name": "@poweredge/smtalent-challenge-lib",
   "version": "0.0.0",
   "type": "module",
+  "main": "dist/main.js",
   "files": [
     "dist"
   ],
