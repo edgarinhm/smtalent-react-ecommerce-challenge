@@ -1,8 +1,11 @@
+import { Button } from "@poweredge/smtalent-challenge-lib"
+
 function App() {
   
   return (
     <>
-      Power Ecommerce
+      <h2>Poweredge Ecommerce</h2>
+      <Button variant="outlined">Login</Button>
     </>
   )
 }

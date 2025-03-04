@@ -1,6 +1,6 @@
 {
   "name": "@poweredge/smtalent-challenge-lib",
-  "version": "0.0.0",
+  "version": "0.0.7",
   "type": "module",
   "main": "dist/main.js",
   "files": [

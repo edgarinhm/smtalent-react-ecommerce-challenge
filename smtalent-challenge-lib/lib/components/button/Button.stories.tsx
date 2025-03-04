@@ -12,7 +12,7 @@ const meta = {
   },
   tags: ['autodocs'],
   args: {
-    label: 'Button',
+    children: 'Button',
     onClick: fn(),
   },
 } satisfies Meta<typeof Button>
@@ -23,21 +23,21 @@ type Story = StoryObj<typeof meta>
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
   args: {
-    label: 'Button Primary',
+    children: 'Button Primary',
     color: 'primary',
   },
 }
 
 export const Secondary: Story = {
   args: {
-    label: 'Button Secondary',
+    children: 'Button Secondary',
     color: 'secondary',
   },
 }
 
 export const Outlined: Story = {
   args: {
-    label: 'Button Outlined',
+    children: 'Button Outlined',
     color: 'primary',
     variant: 'outlined'
   },
@@ -45,7 +45,7 @@ export const Outlined: Story = {
 
 export const Disabled: Story = {
   args: {
-    label: 'Button Disabled',
+    children: 'Button Disabled',
     disabled: true,
   },
 }

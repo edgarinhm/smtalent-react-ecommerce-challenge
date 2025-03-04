@@ -9,4 +9,11 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --smtalent-challenge-lib-variant-contained-bg: #ffd814;
+  --smtalent-challenge-lib-variant-contained-color: #0f1111;
+  --smtalent-challenge-lib-variant-contained-border: #ffd814;
+  --smtalent-challenge-lib-variant-outlined-bg: #fff;
+  --smtalent-challenge-lib-variant-outlined-color: #ffd814;
+  --smtalent-challenge-lib-variant-outlined-border: #ffd814;
 }

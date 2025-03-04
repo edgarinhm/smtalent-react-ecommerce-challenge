@@ -1,10 +1,7 @@
 .button {
-  background-color: var(--smtalent-challenge-lib-variant-contained-bg, #fff);
-  color: var(--smtalent-challenge-lib-variant-contained-color, #000);
   font-size: var(--smtalent-challenge-lib-button-font-size, 1rem);
   font-weight: var(--smtalent-challenge-lib-button-font-weight, 700);
   border-radius: var(--smtalent-challenge-lib-button-radius, 4px);
-  border: 1px solid var(--smtalent-challenge-lib-variant-outlined-border, #000);
   display: inline-flex;
   align-items: center;
   appearance: none;
@@ -47,49 +44,40 @@
 }
 
 .button--primary {
-  --smtalent-challenge-lib-variant-contained-bg: #1976d2;
-  --smtalent-challenge-lib-variant-contained-color: #fff;
-
   border: 0;
-  color: var(--smtalent-challenge-lib-variant-contained-color);
+  color: var(--smtalent-challenge-lib-variant-contained-color, #fff);
+  background-color: var(--smtalent-challenge-lib-variant-contained-bg, #1976d2);
+  border-color: var(--smtalent-challenge-lib-variant-contained-border, #1976d2);
 
   &:hover {
-    background-color: var(--smtalent-challenge-lib-variant-contained-bg);
-    border-color: var(--smtalent-challenge-lib-variant-outlined-border);
-    color: var(--smtalent-challenge-lib-variant-contained-color);
+    background-color: var(--smtalent-challenge-lib-variant-contained-bg, #1565c0);
+    border-color: var(--smtalent-challenge-lib-variant-contained-border, #1565c0);
   }
 
   &:active {
-    background-color: var(--smtalent-challenge-lib-variant-contained-bg);
-    border-color: var(--smtalent-challenge-lib-variant-outlined-border);
-    color: var(--smtalent-challenge-lib-variant-contained-color);
+    background-color: var(--smtalent-challenge-lib-variant-contained-bg, #1976d2);
+    border-color: var(--smtalent-challenge-lib-variant-contained-border, #1976d2);
   }
 
   &:focus {
     outline: 3px solid
-      var(--smtalent-challenge-lib-button-primary-focus-outline-color, rgb(0, 97, 202 / 30%));
+      var(--smtalent-challenge-lib-button-primary-focus-contained-color, rgb(0, 97, 202 / 30%));
   }
 
   &.button--outlined {
-    --smtalent-challenge-lib-variant-text-color: #1976d2;
-    --smtalent-challenge-lib-variant-outlined-color: #1976d2;
-    --smtalent-challenge-lib-variant-outlined-border: rgb(250 118 210 / 5%);
-
     border: 1px solid currentcolor;
-    background-color: var(--smtalent-challenge-lib-variant-outlined-bg);
-    color: var(--smtalent-challenge-lib-variant-outlined-color);
-    border-color: var(--smtalent-challenge-lib-variant-outlined-border);
+    background-color: var(--smtalent-challenge-lib-variant-outlined-bg, #fff);
+    color: var(--smtalent-challenge-lib-variant-outlined-color, #1976d2);
+    border-color: var(--smtalent-challenge-lib-variant-outlined-border, rgb(250 118 210 / 5%));
 
     &:hover {
-      background-color: var(--smtalent-challenge-lib-variant-outlined-bg);
-      border-color: var(--smtalent-challenge-lib-variant-outlined-border);
-      color: var(--smtalent-challenge-lib-variant-outlined-color);
+      background-color: var(--smtalent-challenge-lib-variant-outlined-bg, rgb(25 118 210 / 4%));
+      border-color: var(--smtalent-challenge-lib-variant-outlined-border, #1976d2);
     }
 
     &:active {
       background-color: var(--smtalent-challenge-lib-variant-outlined-bg);
       border-color: var(--smtalent-challenge-lib-variant-outlined-border);
-      color: var(--smtalent-challenge-lib-variant-outlined-color);
     }
 
     &:focus {
@@ -122,13 +110,4 @@
   padding: 0 0.5rem;
   font-size: 0.75rem;
   line-height: 1.25rem;
-}
-
-@media (hover: hover) {
-  .button--primary:hover {
-    --smtalent-challenge-lib-variant-contained-bg: #1565c0;
-    --smtalent-challenge-lib-variant-text-bg: rgb(25 118 210 / 4%);
-    --smtalent-challenge-lib-variant-outlined-border: #1976d2;
-    --smtalent-challenge-lib-variant-outlined-bg: rgb(25 118 210 / 4%);
-  }
 }
