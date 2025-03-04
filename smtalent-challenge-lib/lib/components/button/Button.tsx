@@ -1,10 +1,23 @@
-import { ReactNode } from 'react'
+import { ButtonProps } from './Button.types'
+import styles from './Button.module.css'
+import clsx from 'clsx';
+export function Button({  size = 'medium', label, type = 'button', ...props }: Readonly<ButtonProps>) {
+  const style = clsx(
+    styles.button, 
+    props.className,
+    props.variant && styles[`button--${props.variant}`],
+    props.style && styles[`button--${props.style}`],{
+    [styles[`button--${size}`]]: size,
+  });
+  
 
-interface ButtonProps {
-  children: ReactNode
+  return (
+    <button
+      type={type}
+      className={style}
+      {...props}
+    >
+      {label}
+    </button>
+  )
 }
-const Button = (props: ButtonProps) => {
-  return <button>{props.children}</button>
-}
-
-export default Button
