@@ -1,10 +1,10 @@
 .button {
-  background-color: var(--smtalent-challenge-lib-button-bg-color);
-  color: var(--smtalent-challenge-lib-button-color, #000);
+  background-color: var(--smtalent-challenge-lib-variant-contained-bg, #fff);
+  color: var(--smtalent-challenge-lib-variant-contained-color, #000);
   font-size: var(--smtalent-challenge-lib-button-font-size, 1rem);
   font-weight: var(--smtalent-challenge-lib-button-font-weight, 700);
-  border-radius: var(--smtalent-challenge-lib-button-radius, 0.714rem);
-  border: 1px solid var(--smtalent-challenge-lib-button-color, #000);
+  border-radius: var(--smtalent-challenge-lib-button-radius, 4px);
+  border: 1px solid var(--smtalent-challenge-lib-variant-outlined-border, #000);
   display: inline-flex;
   align-items: center;
   appearance: none;
@@ -17,34 +17,85 @@
     color 0.2s ease;
   cursor: pointer;
   overflow: hidden;
-}
-
-.button--primary {
-  border: 1px solid #007bff;
-  background-color: var(--smtalent-challenge-lib-button-primary-bg-color, #007bff);
-  color: var(--smtalent-challenge-lib-button-primary-color, #fff);
+  text-transform: uppercase;
+  box-shadow:
+    0 3px 1px -2px rgb(0 0 0 / 20%),
+    0 2px 2px 0 rgb(0 0 0 / 14%),
+    0 1px 5px 0 rgb(0 0 0 / 12%);
 
   &:hover {
-    background-color: var(--smtalent-challenge-lib-button-primary-bg-hover-color, #0061ca);
-    border-color: var(--smtalent-challenge-lib-button-primary-border-color-hover);
-    color: var(--smtalent-challenge-lib-button-primary-color-hover);
+    box-shadow:
+      0 2px 4px -1px rgb(0 0 0 / 2%),
+      0 4px 5px 0 rgb(0 0 0 / 14%),
+      0 1px 10px 0 rgb(0 0 0 / 12%);
   }
 
   &:active {
-    background-color: var(--smtalent-challenge-lib-button-primary-bg-color, #007bff);
-    border-color: var(--smtalent-challenge-lib-button-primary-border-color-active);
-    color: var(--smtalent-challenge-lib-button-primary-color-active);
+    box-shadow:
+      0 5px 5px -3px rgb(0 0 0 / 2%),
+      0 8px 10px 1px rgb(0 0 0 / 14%),
+      0 3px 14px 2px rgb(0 0 0 / 12%);
   }
 
   &:disabled {
-    background-color: var(--smtalent-challenge-lib-button-primary-background-color-disabled);
-    border-color: var(--smtalent-challenge-lib-button-primary-border-color-disabled);
-    color: var(--smtalent-challenge-lib-button-primary-color-disabled);
+    color: rgb(0 0 0 / 26%);
+    box-shadow: none;
+    background-color: rgb(0 0 0 / 12%);
+    pointer-events: none;
+    cursor: default;
+  }
+}
+
+.button--primary {
+  --smtalent-challenge-lib-variant-contained-bg: #1976d2;
+  --smtalent-challenge-lib-variant-contained-color: #fff;
+
+  border: 0;
+  color: var(--smtalent-challenge-lib-variant-contained-color);
+
+  &:hover {
+    background-color: var(--smtalent-challenge-lib-variant-contained-bg);
+    border-color: var(--smtalent-challenge-lib-variant-outlined-border);
+    color: var(--smtalent-challenge-lib-variant-contained-color);
+  }
+
+  &:active {
+    background-color: var(--smtalent-challenge-lib-variant-contained-bg);
+    border-color: var(--smtalent-challenge-lib-variant-outlined-border);
+    color: var(--smtalent-challenge-lib-variant-contained-color);
   }
 
   &:focus {
     outline: 3px solid
       var(--smtalent-challenge-lib-button-primary-focus-outline-color, rgb(0, 97, 202 / 30%));
+  }
+
+  &.button--outlined {
+    --smtalent-challenge-lib-variant-text-color: #1976d2;
+    --smtalent-challenge-lib-variant-outlined-color: #1976d2;
+    --smtalent-challenge-lib-variant-outlined-border: rgb(250 118 210 / 5%);
+
+    border: 1px solid currentcolor;
+    background-color: var(--smtalent-challenge-lib-variant-outlined-bg);
+    color: var(--smtalent-challenge-lib-variant-outlined-color);
+    border-color: var(--smtalent-challenge-lib-variant-outlined-border);
+
+    &:hover {
+      background-color: var(--smtalent-challenge-lib-variant-outlined-bg);
+      border-color: var(--smtalent-challenge-lib-variant-outlined-border);
+      color: var(--smtalent-challenge-lib-variant-outlined-color);
+    }
+
+    &:active {
+      background-color: var(--smtalent-challenge-lib-variant-outlined-bg);
+      border-color: var(--smtalent-challenge-lib-variant-outlined-border);
+      color: var(--smtalent-challenge-lib-variant-outlined-color);
+    }
+
+    &:focus {
+      outline: 3px solid
+        var(--smtalent-challenge-lib-button-primary-focus-outline-color, rgb(0, 97, 202 / 30%));
+    }
   }
 }
 
@@ -71,4 +122,13 @@
   padding: 0 0.5rem;
   font-size: 0.75rem;
   line-height: 1.25rem;
+}
+
+@media (hover: hover) {
+  .button--primary:hover {
+    --smtalent-challenge-lib-variant-contained-bg: #1565c0;
+    --smtalent-challenge-lib-variant-text-bg: rgb(25 118 210 / 4%);
+    --smtalent-challenge-lib-variant-outlined-border: #1976d2;
+    --smtalent-challenge-lib-variant-outlined-bg: rgb(25 118 210 / 4%);
+  }
 }

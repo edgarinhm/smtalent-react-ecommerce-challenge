@@ -20,25 +20,33 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-
-export const Default: Story = {
-  args: {
-    label: 'Default Button'
-  }
-};
-
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
   args: {
     label: 'Button Primary',
-    variant: 'primary',
+    color: 'primary',
   },
 }
 
 export const Secondary: Story = {
   args: {
     label: 'Button Secondary',
-    variant: 'secondary',
+    color: 'secondary',
+  },
+}
+
+export const Outlined: Story = {
+  args: {
+    label: 'Button Outlined',
+    color: 'primary',
+    variant: 'outlined'
+  },
+}
+
+export const Disabled: Story = {
+  args: {
+    label: 'Button Disabled',
+    disabled: true,
   },
 }
 
