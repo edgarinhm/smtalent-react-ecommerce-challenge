@@ -1,7 +1,7 @@
 import { ButtonProps } from './Button.types'
 import styles from './Button.module.css'
 import clsx from 'clsx';
-export function Button({  color = "primary", size = 'medium', label, type = 'button', ...props }: Readonly<ButtonProps>) {
+export function Button({  color = "primary", size = 'medium', type = 'button', label, ...props }: Readonly<ButtonProps>) {
   const style = clsx(
     styles.button, 
     props.className, {
