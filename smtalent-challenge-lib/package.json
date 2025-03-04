@@ -1,6 +1,5 @@
 {
-  "name": "smtalent-challenge-lib",
-  "private": true,
+  "name": "@edgarinhm/smtalent-challenge-lib",
   "version": "0.0.0",
   "type": "module",
   "files": [
