@@ -29,12 +29,26 @@ jobs:
     needs: deploy
     #if: ${{ needs.changes.outputs.frontend == 'true' }}
     runs-on: ubuntu-latest
+    permissions:
+      contents: read # access to check out code and install dependencies
     steps:
       - name: Get latest code
         uses: actions/checkout@v4
 
       - name: 📂 Set working directory
         run: cd frontend
+
+      - name: Node Js setup
+        uses: actions/setup-node@v4
+        with:
+          nod-version: ${{ secrets.APP_NODE_VERSION }}
+          cache: "npm"
+
+      - name: Dependecy Installation
+        run: npm run install
+
+      - name: App Build
+        run: npm run build
 
       - name: Configure AWS credentials using OIDC
         uses: aws-actions/configure-aws-credentials@v4
@@ -43,21 +57,21 @@ jobs:
           role-session-name: GitHub_to_AWS_via_FederatedOIDC
           aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: Execute commands via SSM #, "runuser -l ubuntu git pull origin staging", "sudo systemctl restart gunicorn.service && echo Gunicorn restarted successfully || echo Gunicorn failed to restart"
-        id: execute_command
-        run: |
-          COMMAND_ID=$(aws ssm send-command \
-            --instance-ids ${{ secrets.AWS_EC2_INSTANCE_ID }} \
-            --document-name "AWS-RunShellScript" \
-            --parameters 'commands=["whoami"]' \
-            --comment "Deploying To Staging" \
-            --query "Command.CommandId" \
-            --output text)
+        # - name: Execute commands via SSM #, "runuser -l ubuntu git pull origin staging", "sudo systemctl restart gunicorn.service && echo Gunicorn restarted successfully || echo Gunicorn failed to restart"
+        #   id: execute_command
+        #   run: |
+        #     COMMAND_ID=$(aws ssm send-command \
+        #       --instance-ids ${{ secrets.AWS_EC2_INSTANCE_ID }} \
+        #       --document-name "AWS-RunShellScript" \
+        #       --parameters 'commands=["whoami"]' \
+        #       --comment "Deploying To Staging" \
+        #       --query "Command.CommandId" \
+        #       --output text)
 
-          echo "Command ID: $COMMAND_ID"
-          echo "::set-output name=command_id::$COMMAND_ID"
+        #     echo "Command ID: $COMMAND_ID"
+        #     echo "::set-output name=command_id::$COMMAND_ID"
 
-      - name: Output execution via SSM
+        # - name: Output execution via SSM
         id: output_execution
         run: |
           COMMAND_ID=${{ steps.execute_command.outputs.command_id }}
@@ -67,3 +81,6 @@ jobs:
             --query "CommandInvocations[].CommandPlugins[].{Status:Status,Output:Output}" \
             --command-id "$COMMAND_ID" \
             --output text
+
+      - name: Deploy to S3
+        run: aws s3 sync ./dist s3://${{ secrets.AWS_S3_BUCKET_NAME }} --delete
