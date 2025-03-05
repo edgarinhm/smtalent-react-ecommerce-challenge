@@ -7,7 +7,7 @@ on:
     types:
       - closed # Trigger when the PR is closed (merged)
 permissions:
-  id-token: write
+  id-token: write # required for aws auth OICD
 
 jobs:
   deploy: # Only run if the PR was merged
@@ -17,8 +17,8 @@ jobs:
     outputs: # Set job outputs to values from filter step
       frontend: ${{ steps.filter.outputs.frontend }}
     steps:
-      #- name: Filter code changes
-      - uses: dorny/paths-filter@v3
+      - name: Filter code changes
+        uses: dorny/paths-filter@v3
         id: filter
         with:
           filters: |
@@ -30,8 +30,8 @@ jobs:
     #if: ${{ needs.changes.outputs.frontend == 'true' }}
     runs-on: ubuntu-latest
     steps:
-      #- name: Get latest code
-      - uses: actions/checkout@v4
+      - name: Get latest code
+        uses: actions/checkout@v4
 
       - name: 📂 Set working directory
         run: cd frontend
@@ -39,7 +39,7 @@ jobs:
       - name: Configure AWS credentials using OIDC
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/${{ secrets.AWS_ROLE_OIDC_ID }}
+          role-to-assume: ${{ secrets.AWS_ROLE_OIDC_ID }}
           role-session-name: GitHub_to_AWS_via_FederatedOIDC
           aws-region: ${{ secrets.AWS_REGION }}
 
