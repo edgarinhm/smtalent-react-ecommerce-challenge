@@ -8,8 +8,8 @@ on:
       - closed # Trigger when the PR is closed (merged)
 
 jobs:
-  deploy:
-    if: github.event.pull_request.merged == true # Only run if the PR was merged
+  deploy: # Only run if the PR was merged
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
 
     outputs: # Set job outputs to values from filter step
