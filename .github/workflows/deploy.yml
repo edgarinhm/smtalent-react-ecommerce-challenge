@@ -42,7 +42,7 @@ jobs:
       - name: Node Js setup
         uses: actions/setup-node@v4
         with:
-          nod-version: ${{ secrets.APP_NODE_VERSION }}
+          node-version: ${{ secrets.APP_NODE_VERSION }}
           #cache: "npm"
 
       - name: Dependecy Installation
