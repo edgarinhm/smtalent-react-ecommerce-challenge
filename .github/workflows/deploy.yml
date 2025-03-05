@@ -6,6 +6,8 @@ on:
       - staging
     types:
       - closed # Trigger when the PR is closed (merged)
+permissions:
+  id-token: write
 
 jobs:
   deploy: # Only run if the PR was merged
@@ -27,7 +29,6 @@ jobs:
     needs: deploy
     #if: ${{ needs.changes.outputs.frontend == 'true' }}
     runs-on: ubuntu-latest
-
     steps:
       #- name: Get latest code
       - uses: actions/checkout@v4
