@@ -25,12 +25,9 @@ jobs:
 
   frontend: # JOB to build and test frontend code
     needs: deploy
-    strategy:
-      matrix:
-        # Parse JSON array containing names of all filters matching any of changed files
-        # e.g. ['package1', 'package2'] if both package folders contains changes
-        frontend: ${{ fromJSON(needs.changes.outputs.frontend) }}
+    #if: ${{ needs.changes.outputs.frontend == 'true' }}
     runs-on: ubuntu-latest
+
     steps:
       #- name: Get latest code
       - uses: actions/checkout@v4
