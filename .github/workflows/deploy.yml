@@ -15,7 +15,7 @@ jobs:
     outputs: # Set job outputs to values from filter step
       frontend: ${{ steps.filter.outputs.frontend }}
     steps:
-      - name: Filter code changes
+      #- name: Filter code changes
       - uses: dorny/paths-filter@v3
         id: filter
         with:
@@ -29,7 +29,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 🚚 Get latest code
+      #- name: Get latest code
       - uses: actions/checkout@v4
 
       - name: 📂 Set working directory
@@ -45,7 +45,7 @@ jobs:
         id: execute_command
         run: |
           COMMAND_ID=$(aws ssm send-command \
-            --instance-ids ${{ secrets.AWS_INSTANCE_ID }} \
+            --instance-ids ${{ secrets.AWS_EC2_INSTANCE_ID }} \
             --document-name "AWS-RunShellScript" \
             --parameters 'commands=["echo "Commands to be executed" ", 
               "whoami"]' \
