@@ -42,7 +42,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           nod-version: ${{ secrets.APP_NODE_VERSION }}
-          cache: "npm"
+          #cache: "npm"
 
       - name: Dependecy Installation
         run: npm run install
