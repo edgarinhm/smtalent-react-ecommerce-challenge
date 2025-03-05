@@ -49,7 +49,7 @@ jobs:
           COMMAND_ID=$(aws ssm send-command \
             --instance-ids ${{ secrets.AWS_EC2_INSTANCE_ID }} \
             --document-name "AWS-RunShellScript" \
-            --parameters 'commands=["echo "Commands to be executed" ", "whoami"]' \
+            --parameters 'commands=["whoami"]' \
             --comment "Deploying To Staging" \
             --query "Command.CommandId" \
             --output text)
