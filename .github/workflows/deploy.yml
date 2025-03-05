@@ -25,7 +25,7 @@ jobs:
 
   frontend: # JOB to build and test frontend code
     needs: deploy
-    if: ${{ needs.changes.outputs.frontend == 'true' }}
+    if: ${{ needs.changes.outputs.frontend }}
     runs-on: ubuntu-latest
 
     steps:
