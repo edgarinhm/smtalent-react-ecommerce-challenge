@@ -72,15 +72,15 @@ jobs:
         #     echo "::set-output name=command_id::$COMMAND_ID"
 
         # - name: Output execution via SSM
-        id: output_execution
-        run: |
-          COMMAND_ID=${{ steps.execute_command.outputs.command_id }}
-          aws ssm list-command-invocations \
-            --details \
-            --instance-id ${{ secrets.AWS_EC2_INSTANCE_ID }} \
-            --query "CommandInvocations[].CommandPlugins[].{Status:Status,Output:Output}" \
-            --command-id "$COMMAND_ID" \
-            --output text
+        # id: output_execution
+        # run: |
+        #   COMMAND_ID=${{ steps.execute_command.outputs.command_id }}
+        #   aws ssm list-command-invocations \
+        #     --details \
+        #     --instance-id ${{ secrets.AWS_EC2_INSTANCE_ID }} \
+        #     --query "CommandInvocations[].CommandPlugins[].{Status:Status,Output:Output}" \
+        #     --command-id "$COMMAND_ID" \
+        #     --output text
 
       - name: Deploy to S3
         run: aws s3 sync ./dist s3://${{ secrets.AWS_S3_BUCKET_NAME }} --delete
