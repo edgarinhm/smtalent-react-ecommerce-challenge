@@ -43,11 +43,12 @@ jobs:
 
       - name: 📂 Set working directory
         run: cd frontend
+
+      - name: 📂 -List working directory
         run: ls
 
       - name: Dependecy Installation
         run: npm run install
-        run: ls
 
       - name: App Build
         run: npm run build
