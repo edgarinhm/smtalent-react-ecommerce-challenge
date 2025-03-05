@@ -5,6 +5,7 @@ function App() {
   return (
     <>
       <h2>Poweredge Ecommerce</h2>
+      <span>{'from AWS EC2'}</span>
       <Button variant="outlined">Login</Button>
     </>
   )
