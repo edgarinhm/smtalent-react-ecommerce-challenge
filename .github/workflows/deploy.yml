@@ -31,10 +31,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read # access to check out code and install dependencies
-    defaults:
-      run:
-        # Frontend folder working directory.
-        working-directory: frontend
     steps:
       - name: Get latest code
         uses: actions/checkout@v4
@@ -42,8 +38,11 @@ jobs:
       - name: Node Js setup
         uses: actions/setup-node@v4
         with:
-          nod-version: ${{ secrets.APP_NODE_VERSION }}
+          node-version: ${{ secrets.APP_NODE_VERSION }}
           #cache: "npm"
+
+      - name: 📂 Set working directory
+        run: cd frontend
 
       - name: Dependecy Installation
         run: npm run install
