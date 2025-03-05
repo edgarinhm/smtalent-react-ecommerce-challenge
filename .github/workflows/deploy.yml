@@ -50,7 +50,7 @@ jobs:
             --instance-ids ${{ secrets.AWS_EC2_INSTANCE_ID }} \
             --document-name "AWS-RunShellScript" \
             --parameters 'commands=["echo "Commands to be executed" ", "whoami"]' \
-            --comment "Deploying To Staging"" \
+            --comment "Deploying To Staging" \
             --query "Command.CommandId" \
             --output text)
 
