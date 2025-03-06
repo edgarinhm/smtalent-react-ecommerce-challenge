@@ -1,13 +1,25 @@
-# React Poweredge Ecommerce + TypeScript + Vite
+# React Ecommerce + TypeScript + Vite
 
-- [React Poweredge Ecommerce + TypeScript + Vite](#react-poweredge-ecommerce--typescript--vite)
+- [React Ecommerce + TypeScript + Vite](#react-ecommerce-chart--typescript--vite)
+  - [Expanding the ESLint configuration](#expanding-the-eslint-configuration)
   - [In a nutshell](#in-a-nutshell)
   - [Usage](#usage)
     - [Development](#development)
       - [Env File](#env-file)
+      - [Environment variables](#environment-variables)
+  - [Available Scripts](#available-scripts)
+    - [`npm dev`](#npm-dev)
+    - [`npm test`](#npm-test)
+    - [`npm build`](#npm-build)
+  - [More info](#more-info)
+    - [React, Design, and Data Standards](#react-design-and-data-standards)
+    - [Naming Conventions](#naming-conventions)
+    - [Date Standards](#date-standards)
+    - [CSS Standards](#css-standards)
+    - [Folder structure](#folder-structure)
     - [Deployment CI/CD](#deployment-cicd)
     - [Demo:](#demo)
-  
+
 ## In a nutshell
 
 This app works as a handmade template for React Typescript.
@@ -26,6 +38,7 @@ You are going to need a `.env` file like this one:
 
 ```bash
 VITE_API_URL=http://your-api-url.com
+```
 
 #### Environment variables
 
@@ -37,7 +50,7 @@ VITE_API_URL=http://your-api-url.com
 | -------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [React 19](https://facebook.github.io/react/)                              | Fast, composable client-side components.                                                                                                                |
 | A complete routing library for React                                                                                                     | [ESLint](http://eslint.org/)                                               | Lint JS. Reports syntax and style issues. Using [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb) for the airbnb style guides. |
-| Custom UI                                                               | Custom UI/ is the components & styles library to build user interfaces                                                                                |
+| Material UI                                                               | Material UI/ is the components & styles library to build user interfaces                                                                                |
 
 ## Available Scripts
 
@@ -71,7 +84,8 @@ See the section about [deployment](https://vitejs.dev/guide/static-deploy.html) 
 ### React, Design, and Data Standards
 
 - Use shallow and only import the properties you need from zustand stores
-- Do not disable compiler warnings on dependency arrays (unless absolutely necessary). Also be specific about what you use in dependency arrays for hooks
+- Do not disable compiler warnings on dependency arrays (unless absolutely necessary)
+  - Also be specific about what you use in dependency arrays for hooks
 - Functions and business logic should be pulled into their own hooks/services.
 - Always handle undefined, don't default to empty objects
 - Cleanup broadcast channels and listeners in hooks
@@ -130,13 +144,13 @@ See the section about [deployment](https://vitejs.dev/guide/static-deploy.html) 
 
 - Always use "GetBy..." methods (like GetByTestId) instead of "QueryBy...".
 - Only use "QueryBy...." methods if we are trying to prove that an element does NOT exist.
-- Don't use user.Type() method if the string to be typed is > 1 character. This can cause timeouts as each keystroke can trigger events. Use user.Paste() instead.
+- Don't use user.Type() method if the string to be typed is > 1 character.
+  - This can cause timeouts as each keystroke can trigger events. Use user.Paste() instead.
 - Mock hooks in tests unless you are testing the hook itself
 
 ### Folder structure
 
 ```
-
 ├── dist                    # Compiled files (auto-generated)
 ├── node_modules            # Node libraries (auto-generated)
 ├── public                  # Config files, images
@@ -158,7 +172,6 @@ See the section about [deployment](https://vitejs.dev/guide/static-deploy.html) 
 ├── configuration-files
 ├── package.json
 └── README.md
-
 ```
 
 ### Deployment CI/CD
@@ -167,4 +180,4 @@ See the section about [deployment](https://vitejs.dev/guide/static-deploy.html) 
 
 ### Demo:
 
-- Stage: http://poweredge-smtalent-ecommerce-bucket.s3-website.us-east-2.amazonaws.com/
+- Stage: http://poweredge-smtalent-ecommerce-bucket.s3-website.us-east-2.amazonaws.com
