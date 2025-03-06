@@ -41,17 +41,13 @@ jobs:
           node-version: ${{ secrets.APP_NODE_VERSION }}
           #cache: "npm"
 
-      - name: 📂 Set working directory
-        run: cd frontend
-
-      - name: 📂 -List working directory
-        run: ls
-
       - name: Dependecy Installation
         run: npm run install
+        working-directory: frontend
 
       - name: App Build
         run: npm run build
+        working-directory: frontend
 
       - name: Configure AWS credentials using OIDC
         uses: aws-actions/configure-aws-credentials@v4
@@ -87,3 +83,4 @@ jobs:
 
       - name: Deploy to S3
         run: aws s3 sync ./dist s3://${{ secrets.AWS_S3_BUCKET_NAME }} --delete
+        working-directory: frontend
