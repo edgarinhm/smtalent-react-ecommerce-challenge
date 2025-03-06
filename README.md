@@ -1,12 +1,12 @@
 # React Ecommerce + TypeScript + Vite
 
-- [React Ecommerce + TypeScript + Vite](#react-ecommerce-chart--typescript--vite)
-  - [Expanding the ESLint configuration](#expanding-the-eslint-configuration)
+- [React Ecommerce + TypeScript + Vite](#react-ecommerce--typescript--vite)
   - [In a nutshell](#in-a-nutshell)
   - [Usage](#usage)
     - [Development](#development)
       - [Env File](#env-file)
       - [Environment variables](#environment-variables)
+  - [Technologies](#technologies)
   - [Available Scripts](#available-scripts)
     - [`npm dev`](#npm-dev)
     - [`npm test`](#npm-test)
@@ -16,9 +16,11 @@
     - [Naming Conventions](#naming-conventions)
     - [Date Standards](#date-standards)
     - [CSS Standards](#css-standards)
+    - [Testing Standards](#testing-standards)
+      - [React Testing Library Good-to-Knows](#react-testing-library-good-to-knows)
     - [Folder structure](#folder-structure)
     - [Deployment CI/CD](#deployment-cicd)
-    - [Demo:](#demo)
+    - [Demo](#demo)
 
 ## In a nutshell
 
@@ -178,6 +180,6 @@ See the section about [deployment](https://vitejs.dev/guide/static-deploy.html) 
 
 - Github Actions and Aws Session Manager
 
-### Demo:
+### Demo
 
 - Stage: http://poweredge-smtalent-ecommerce-bucket.s3-website.us-east-2.amazonaws.com
