@@ -1,14 +1,13 @@
-import { Button } from "@poweredge/smtalent-challenge-lib"
+import { Button } from "@poweredge/smtalent-challenge-lib";
 
 function App() {
-  
   return (
     <>
       <h2>Poweredge Ecommerce</h2>
-      <span>{'from AWS EC2 x6'}</span>
+      <span>{"from AWS EC2 x7"}</span>
       <Button variant="outlined">Login</Button>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
