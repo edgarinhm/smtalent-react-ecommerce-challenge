@@ -1,0 +1,24 @@
+pre-push:
+  parallel: true
+  jobs:
+    - name: eslint
+      tags:
+        - frontend
+      run: npm lint . --quiet
+      root: frontend
+    - name: test
+      tags:
+        - frontend
+      run: vitest --run --silent
+      root: frontend
+pre-commit:
+  parallel: true
+  jobs:
+    - name: eslint fix
+      stage_fixed: true
+      run: npm lint --fix {staged_files} --quiet
+      glob: "*.{ts,tsx}"
+      root: frontend
+    - name: test related
+      run: vitest related {staged_files} --run --silent
+      root: frontendcd
