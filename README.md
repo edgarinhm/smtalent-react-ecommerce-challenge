@@ -182,4 +182,4 @@ See the section about [deployment](https://vitejs.dev/guide/static-deploy.html) 
 
 ### Demo
 
-- Stage: http://poweredge-smtalent-ecommerce-bucket.s3-website.us-east-2.amazonaws.com
+- Stage: <http://poweredge-smtalent-ecommerce-bucket.s3-website.us-east-2.amazonaws.com>
