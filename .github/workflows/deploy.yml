@@ -43,11 +43,11 @@ jobs:
 
       - name: Dependecy Installation
         run: npm run install
-        working-directory: frontend
+        working-directory: ./frontend
 
       - name: App Build
         run: npm run build
-        working-directory: frontend
+        working-directory: ./frontend
 
       - name: Configure AWS credentials using OIDC
         uses: aws-actions/configure-aws-credentials@v4
