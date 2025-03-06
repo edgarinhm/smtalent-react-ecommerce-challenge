@@ -1,24 +1,2 @@
-pre-push:
-  parallel: true
-  jobs:
-    - name: lint
-      tags:
-        - frontend
-      run: npm lint . --quiet
-      root: frontend
-    - name: test
-      tags:
-        - frontend
-      run: vitest --run --silent
-      root: frontend
-pre-commit:
-  parallel: true
-  jobs:
-    - name: lint fix
-      stage_fixed: true
-      run: npm lint --fix {staged_files} --quiet
-      glob: "*.{ts,tsx}"
-      root: frontend
-    - name: test related
-      run: vitest related {staged_files} --run --silent
-      root: frontend
+extends:
+  - frontend/lefthook.yml
