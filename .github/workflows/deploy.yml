@@ -40,6 +40,9 @@ jobs:
         with:
           node-version: ${{ secrets.APP_NODE_VERSION }}
           #cache: "npm"
+      - name: List dir
+        run: ls
+        working-directory: ./frontend
 
       - name: Dependecy Installation
         run: npm run install
