@@ -50,7 +50,7 @@ VITE_API_URL=http://your-api-url.com
 | -------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [React 19](https://facebook.github.io/react/)                              | Fast, composable client-side components.                                                                                                                |
 | A complete routing library for React                                                                                                     | [ESLint](http://eslint.org/)                                               | Lint JS. Reports syntax and style issues. Using [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb) for the airbnb style guides. |
-| Material UI                                                               | Material UI/ is the components & styles library to build user interfaces                                                                                |
+| Custom UI                                                               | Custom UI/ is the components & styles library to build user interfaces                                                                                |
 
 ## Available Scripts
 
