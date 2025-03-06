@@ -6,8 +6,6 @@ on:
       - staging
     types:
       - closed # Trigger when the PR is closed (merged)
-permissions:
-  id-token: write # required for aws auth OICD
 
 jobs:
   deploy: # Only run if the PR was merged
@@ -30,6 +28,7 @@ jobs:
     #if: ${{ needs.changes.outputs.frontend == 'true' }}
     runs-on: ubuntu-latest
     permissions:
+      id-token: write # required for aws auth OICD
       contents: read # access to check out code and install dependencies
     steps:
       - name: Get latest code
@@ -39,15 +38,15 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ secrets.APP_NODE_VERSION }}
-          #cache: "npm"
+          cache: "npm"
 
       - name: Dependecy Installation
         run: npm install
-        working-directory: ./frontend
+        working-directory: frontend
 
       - name: App Build
         run: npm run build
-        working-directory: ./frontend
+        working-directory: frontend
 
       - name: Configure AWS credentials using OIDC
         uses: aws-actions/configure-aws-credentials@v4
