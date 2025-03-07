@@ -1,13 +1,8 @@
-import { Button } from "@poweredge/smtalent-challenge-lib";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./Router";
 
 function App() {
-  return (
-    <>
-      <h2>Poweredge Ecommerce</h2>
-      <span>{"from AWS EC2 x7"}</span>
-      <Button variant="outlined">Login</Button>
-    </>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
