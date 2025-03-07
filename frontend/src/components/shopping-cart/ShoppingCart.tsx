@@ -7,35 +7,27 @@ export const ShoppingCart = () => {
   const [isLoading, setisLoading] = useState<boolean>();
 
   useEffect(() => {
-    const controller = new AbortController();
-    let cancel = false;
     const loadCountriesData = async () => {
       setisLoading(true);
       try {
-        const countriesData = await GetCountriesByRegion(
-          "america",
-          controller.signal
-        );
-        if (!cancel) setCountries(countriesData);
+        const countriesData = await GetCountriesByRegion("america");
+        setCountries(countriesData);
       } catch (error) {
-        console.error("ERROR", !!error);
+        console.error("ERROR", error);
       } finally {
         setisLoading(false);
       }
     };
 
     loadCountriesData();
-
-    return () => {
-      controller.abort();
-      cancel = true;
-    };
   }, []);
 
   return (
     <>
       <div>{"ShoppingCart"}</div>
-      <pre>{JSON.stringify(countries)}</pre>
+      {countries?.map((country) => {
+        return <div key={country.name.official}>{country.name.official}</div>;
+      })}
       {isLoading && <div>{"Loading..."}</div>}
     </>
   );
