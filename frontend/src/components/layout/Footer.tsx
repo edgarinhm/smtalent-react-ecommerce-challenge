@@ -2,7 +2,10 @@ import styles from "./Footer.module.css";
 
 export const Footer = () => {
   return (
-    <footer role="contentinfo" className={`${styles.footer}`}>
+    <footer
+      role="contentinfo"
+      className={`${styles.footer} ${styles.navLeftFooter}`}
+    >
       <div
         className={`${styles.navFooterLine} ${styles.navFooterLinkLine} ${styles.navFooterPadItemLine} ${styles.navFooterCopyright}`}
       >

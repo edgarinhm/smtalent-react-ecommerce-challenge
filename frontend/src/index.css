@@ -17,3 +17,8 @@
   --smtalent-challenge-lib-variant-outlined-color: #ffd814;
   --smtalent-challenge-lib-variant-outlined-border: #ffd814;
 }
+
+body {
+  margin: 0;
+  padding: 0;
+}
