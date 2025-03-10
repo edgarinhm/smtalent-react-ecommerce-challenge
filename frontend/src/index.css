@@ -11,6 +11,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  --poweredge-color-primary: #0f1111;
+
   --smtalent-challenge-lib-variant-contained-bg: #ffd814;
   --smtalent-challenge-lib-variant-contained-color: #0f1111;
   --smtalent-challenge-lib-variant-contained-border: #ffd814;
@@ -33,6 +35,38 @@ body {
   width: 100%;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+}
+
+ol,
+ul {
+  padding: 0;
+}
+
+li,
+ol li,
+ul li {
+  word-wrap: break-word;
+  margin: 0;
+}
+
+ul {
+  margin: 0 0 0 18px;
+  color: var(--poweredge-color-primary, #0f1111);
+}
+
+li,
+ul li {
+  list-style: disc;
+}
+
 .clipped {
   position: absolute;
   z-index: -1;
@@ -43,4 +77,23 @@ body {
   overflow: hidden;
   padding: 0;
   display: block;
+}
+
+.poweredge-color-primary {
+  color: var(--poweredge-color-primary, #0f1111);
+}
+
+.poweredge-size-micro {
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.poweredge-size-medium-plus {
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+.poweredge-size-double-large {
+  font-size: 36px;
+  line-height: 1.22;
 }
