@@ -39,7 +39,50 @@ export const Outlined: Story = {
   args: {
     children: 'Button Outlined',
     color: 'primary',
-    variant: 'outlined'
+    variant: 'outlined',
+  },
+}
+
+export const Text: Story = {
+  args: {
+    children: 'Button Text',
+    color: 'primary',
+    variant: 'text',
+  },
+}
+
+export const FloatingAction: Story = {
+  args: {
+    children: 'Medium',
+    color: 'primary',
+    variant: 'floating-action',
+  },
+}
+
+export const FloatingActionLarge: Story = {
+  args: {
+    children: 'large',
+    color: 'primary',
+    variant: 'floating-action',
+    size: 'large',
+  },
+}
+
+export const FloatingActionXLarge: Story = {
+  args: {
+    children: 'x large',
+    color: 'primary',
+    variant: 'floating-action',
+    size: 'xlarge',
+  },
+}
+
+export const FloatingActionSmall: Story = {
+  args: {
+    children: 'Small',
+    color: 'primary',
+    variant: 'floating-action',
+    size: 'small',
   },
 }
 
@@ -62,8 +105,7 @@ export const Large: Story = {
   },
 }
 
-
-export const  Medium: Story = {
+export const Medium: Story = {
   args: {
     size: 'medium',
   },
