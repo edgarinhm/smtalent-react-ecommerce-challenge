@@ -83,6 +83,10 @@ ul li {
   color: var(--poweredge-color-primary, #0f1111);
 }
 
+.poweredge-color-primary:hover {
+  --smtalent-challenge-lib-variant-contained-bg: #ffce12;
+}
+
 .poweredge-size-micro {
   font-size: 10px;
   line-height: 1.6;
