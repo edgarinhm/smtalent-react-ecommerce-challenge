@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "./components/layout/Layout";
 import { Spinner } from "./common/components/spinner/Spinner";
+import { LayoutSearch } from "./components/layout/LayoutSearch";
 
 export const homeRoute = {
   path: "/",
@@ -11,13 +12,20 @@ export const shippingCartRoute = {
 };
 
 const homeRoutes = {
-  index: true,
-  async lazy() {
-    const { Home } = await import("./components/home/Home");
-    return { Component: Home };
-  },
-  hydrateFallbackElement: <Spinner />,
+  path: homeRoute.path,
+  element: <Layout />,
+  children: [
+    {
+      index: true,
+      async lazy() {
+        const { Home } = await import("./components/home/Home");
+        return { Component: Home };
+      },
+      hydrateFallbackElement: <Spinner />,
+    },
+  ],
 };
+
 const shoppingCardRoutes = {
   path: shippingCartRoute.path,
   async lazy() {
@@ -28,7 +36,14 @@ const shoppingCardRoutes = {
   },
   hydrateFallbackElement: <Spinner />,
 };
+
+const notFoundRoutes = {
+  path: "*",
+  element: <LayoutSearch />,
+};
+
 export const router = createBrowserRouter([
-  { path: homeRoute.path, element: <Layout />, children: [homeRoutes] },
+  homeRoutes,
   shoppingCardRoutes,
+  notFoundRoutes,
 ]);
