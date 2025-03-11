@@ -179,6 +179,7 @@ See the section about [deployment](https://vitejs.dev/guide/static-deploy.html) 
 ### Deployment CI/CD
 
 - Github Actions and Aws Session Manager
+- Refers to CICD for stategy
 
 ### Demo
 
