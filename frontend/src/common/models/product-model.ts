@@ -5,4 +5,5 @@ export interface ProductModel {
   stock: number;
   price: number;
   tax: number;
+  image: string;
 }
