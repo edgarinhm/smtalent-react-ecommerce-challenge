@@ -4,6 +4,18 @@ import useCartStorage from "../../common/state-management/cart-storage";
 
 export const Header = () => {
   const { getCartCount } = useCartStorage();
+  const CART_COUNT_LIMIT = 99;
+
+  const getCartCountLabel = (cartCount: number): string => {
+    return cartCount > CART_COUNT_LIMIT
+      ? `${CART_COUNT_LIMIT}+`
+      : `${cartCount}`;
+  };
+
+  const getNavCartCountStyle = (cartCount: number): string => {
+    return cartCount > CART_COUNT_LIMIT ? "nav-cart-100" : "nav-cart-0";
+  };
+
   return (
     <header
       id={"navbar-main"}
@@ -48,13 +60,17 @@ export const Header = () => {
               <NavLink
                 to={"/cart"}
                 className={`${styles["nav-a"]} ${styles["nav-a-2"]} ${styles["nav-cart"]}`}
-                aria-label={`${getCartCount()} items in cart`}
+                aria-label={`${getCartCountLabel(
+                  getCartCount()
+                )} items in cart`}
               >
                 <div className={`${styles["nav-cart-count-container"]}`}>
                   <span
-                    className={`${styles["nav-cart-count"]} ${styles["nav-cart-0"]}`}
+                    className={`${styles["nav-cart-count"]} ${
+                      styles[getNavCartCountStyle(getCartCount())]
+                    }`}
                   >
-                    {`${getCartCount()}`}
+                    {getCartCountLabel(getCartCount())}
                   </span>
                   <span
                     className={`${styles["nav-cart-icon"]} ${styles["nav-sprite"]}`}
