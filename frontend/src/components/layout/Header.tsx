@@ -1,7 +1,9 @@
 import { NavLink } from "react-router-dom";
 import styles from "./Header.module.css";
+import useCartStorage from "../../common/state-management/cart-storage";
 
 export const Header = () => {
+  const { getCartCount } = useCartStorage();
   return (
     <header
       id={"navbar-main"}
@@ -46,13 +48,13 @@ export const Header = () => {
               <NavLink
                 to={"/cart"}
                 className={`${styles["nav-a"]} ${styles["nav-a-2"]} ${styles["nav-cart"]}`}
-                aria-label={`0 items in cart`}
+                aria-label={`${getCartCount()} items in cart`}
               >
                 <div className={`${styles["nav-cart-count-container"]}`}>
                   <span
                     className={`${styles["nav-cart-count"]} ${styles["nav-cart-0"]}`}
                   >
-                    {"0"}
+                    {`${getCartCount()}`}
                   </span>
                   <span
                     className={`${styles["nav-cart-icon"]} ${styles["nav-sprite"]}`}

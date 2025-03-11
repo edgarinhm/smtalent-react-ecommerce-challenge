@@ -11,8 +11,7 @@ type ProductsStorageModel = {
 const useProductsStorage = create<ProductsStorageModel>((set) => {
   return {
     products: [],
-    setProductsState: (value: ProductModel[]) =>
-      set(() => ({ products: value })),
+    setProductsState: (products: ProductModel[]) => set(() => ({ products })),
     reset: () => set(() => ({ products: [] })),
     setState: (state) => set(state),
   };
