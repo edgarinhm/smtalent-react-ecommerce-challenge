@@ -8,6 +8,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
+  container-type: inline-size;
 }
 
 button.card-footer-action-buttons {
@@ -37,5 +38,48 @@ button.card-footer-action-buttons {
 @container (inline-size > 300px) {
   .card-grid {
     grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  }
+
+  .card-grid > div {
+    flex-flow: row;
+  }
+
+  .thumbail {
+    inline-size: max(100px, 15cqi);
+  }
+}
+
+@container (inline-size > 400px) {
+  .card-grid {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
+
+  .thumbail {
+    inline-size: max(200px, 20cqi);
+    block-size: 100%;
+  }
+
+  .thumbail img {
+    height: 100%;
+  }
+}
+
+@container (inline-size > 900px) {
+  .card-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .card-grid > div {
+    flex-flow: column;
+  }
+
+  .thumbail {
+    inline-size: 100%;
+    block-size: auto;
+  }
+
+  .thumbail img {
+    aspect-ratio: 4/3;
+    object-fit: contain;
   }
 }
