@@ -1,5 +1,7 @@
 # React Ecommerce + TypeScript + Vite
 
+![home screenshot](image.png)
+
 - [React Ecommerce + TypeScript + Vite](#react-ecommerce--typescript--vite)
   - [In a nutshell](#in-a-nutshell)
   - [Usage](#usage)
@@ -52,7 +54,7 @@ VITE_API_URL=http://your-api-url.com
 | -------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [React 19](https://facebook.github.io/react/)                              | Fast, composable client-side components.                                                                                                                |
 | A complete routing library for React                                                                                                     | [ESLint](http://eslint.org/)                                               | Lint JS. Reports syntax and style issues. Using [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb) for the airbnb style guides. |
-| Custom UI                                                               | Custom UI/ is the components & styles library to build user interfaces                                                                                |
+| Custom UI Lib                                                               | Custom UI/ is the components & styles library to build user interfaces: [custom-ui-lib](https://www.npmjs.com/package/@poweredge/smtalent-challenge-lib)                                                                                |
 
 ## Available Scripts
 
@@ -179,6 +181,7 @@ See the section about [deployment](https://vitejs.dev/guide/static-deploy.html) 
 ### Deployment CI/CD
 
 - Github Actions and Aws Session Manager
+- Refers to CICD for stategy
 
 ### Demo
 

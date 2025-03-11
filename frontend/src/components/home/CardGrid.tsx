@@ -4,12 +4,14 @@ import { ProductModel } from "../../common/models/product-model";
 import currency from "currency.js";
 import { Button } from "@poweredge/smtalent-challenge-lib";
 import { Link } from "react-router-dom";
+import useCartStorage from "../../common/state-management/cart-storage";
 
 interface CardGridProps {
   products: ProductModel[];
 }
 
 export const CardGrid = ({ products }: CardGridProps) => {
+  const { addProduct } = useCartStorage();
   return (
     <section className={styles["card-container"]}>
       <div className={styles["card-grid"]}>
@@ -39,6 +41,7 @@ export const CardGrid = ({ products }: CardGridProps) => {
                   variant="floating-action"
                   size="small"
                   className={`poweredge-color-primary ${styles["card-footer-action-buttons"]}`}
+                  onClick={() => addProduct(product)}
                 >
                   {"Add to cart"}
                 </Button>

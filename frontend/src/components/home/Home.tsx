@@ -1,19 +1,19 @@
-import { JSX, useEffect, useState } from "react";
+import { JSX, useEffect } from "react";
 import styles from "./Home.module.css";
 import { CardGrid } from "./CardGrid";
 import { ProductsData } from "../../common/mocks/products-data";
-import { ProductModel } from "../../common/models/product-model";
 import { CategoryNav } from "./CategoryNav";
+import useProductsStorage from "../../common/state-management/products-storage";
 
 export const Home = (): JSX.Element => {
-  const [products, setProducts] = useState<ProductModel[]>([]);
+  const { products, setProductsState } = useProductsStorage();
 
   useEffect(() => {
     const loadProductsData = () => {
-      setProducts(ProductsData);
+      setProductsState(ProductsData);
     };
     loadProductsData();
-  }, []);
+  }, [setProductsState]);
 
   return (
     <div className={styles.home}>
