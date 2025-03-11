@@ -15,7 +15,7 @@ interface CardHeaderProps {
 Card.CardHeader = ({ title, ...props }: CardHeaderProps) => {
   return (
     <div {...props} className={styles["card-header"]}>
-      <h2 className="poweredge-color-primary">{title}</h2>
+      <h2>{title}</h2>
     </div>
   );
 };

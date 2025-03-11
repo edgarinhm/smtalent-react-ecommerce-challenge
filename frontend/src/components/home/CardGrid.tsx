@@ -11,37 +11,42 @@ interface CardGridProps {
 
 export const CardGrid = ({ products }: CardGridProps) => {
   return (
-    <section className={styles["card-grid"]}>
-      {products.map((product) => {
-        return (
-          <Card key={product.id}>
-            <Card.CardHeader title={product.name} />
-            <Link
-              to={`${product.name
-                .trim()
-                .toLocaleLowerCase()
-                .replaceAll(" ", "-")}/p`}
-            >
-              <img
-                loading="lazy"
-                src={product.image}
-                alt={`${product.category} ${product.name}`}
-              />
-            </Link>
-            <span>{currency(product.price).format()}</span>
-            <Card.CardFooter>
-              <Button
-                style={{ textTransform: "inherit" }}
-                variant="floating-action"
-                size="small"
-                className={`poweredge-color-primary ${styles["card-footer-action-buttons"]}`}
+    <section className={styles["card-container"]}>
+      <div className={styles["card-grid"]}>
+        {products.map((product) => {
+          return (
+            <Card key={product.id}>
+              <Card.CardHeader title={product.name} />
+              <Link
+                className={styles["thumbail"]}
+                to={`${product.name
+                  .trim()
+                  .toLocaleLowerCase()
+                  .replaceAll(" ", "-")}/p`}
               >
-                {"Add to cart"}
-              </Button>
-            </Card.CardFooter>
-          </Card>
-        );
-      })}
+                <img
+                  loading="lazy"
+                  src={product.image}
+                  alt={`${product.category} ${product.name}`}
+                />
+              </Link>
+              <div className={styles["content"]}>
+                <span>{currency(product.price).format()}</span>
+              </div>
+              <Card.CardFooter>
+                <Button
+                  style={{ textTransform: "inherit" }}
+                  variant="floating-action"
+                  size="small"
+                  className={`poweredge-color-primary ${styles["card-footer-action-buttons"]}`}
+                >
+                  {"Add to cart"}
+                </Button>
+              </Card.CardFooter>
+            </Card>
+          );
+        })}
+      </div>
     </section>
   );
 };
