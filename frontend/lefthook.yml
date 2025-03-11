@@ -1,0 +1,16 @@
+pre-push:
+  parallel: true
+  commands:
+    lint:
+      run: npm run lint . --quiet
+    # test:
+    #   run: vitest --run --silent
+pre-commit:
+  parallel: true
+  commands:
+    lint:frontend:
+      stage_fixed: true
+      run: npm run lint:frontend --fix {staged_files} --quiet
+      glob: "*.{ts,tsx}"
+    # test:
+    #   run: vitest related {staged_files} --run --silent

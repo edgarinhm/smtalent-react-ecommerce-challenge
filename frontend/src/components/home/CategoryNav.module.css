@@ -1,0 +1,359 @@
+.featured-categories {
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.navbar-category {
+  top: 0;
+  left: 0;
+  font-family: inherit;
+  font-size: 12px;
+  line-height: 1em;
+  display: block;
+  zoom: 1;
+  min-width: 1000px;
+
+  width: 100%;
+  position: relative;
+  transform: translate3d(0, 0, 0);
+  z-index: 4;
+  background-position: 0 -725px;
+  padding-left: 1px;
+  max-height: 39px;
+  padding-top: 0;
+  background-image: none;
+  background-color: #232f3e;
+}
+
+.navbar-category.nav-sprite {
+  display: flex;
+  position: static;
+  float: none;
+  flex-flow: row nowrap;
+}
+
+.navbar-category.nav-sprite .nav-shop {
+  padding: 0;
+}
+
+.navbar-category.nav-sprite .nav-xshop-container {
+  display: flex;
+  position: static;
+  float: none;
+  flex: 1 1 100%;
+  flex-flow: column nowrap;
+  justify-content: flex-end;
+  min-width: 0;
+}
+
+.nav-xshop-container {
+  position: relative;
+  float: left;
+  margin: 0;
+  padding: 0;
+  z-index: 20;
+}
+
+.navbar-category .nav-xshop-container {
+  padding: 0;
+}
+
+.navbar-category .nav-xshop {
+  margin: 21px 0 0;
+  max-height: 39px;
+  overflow: hidden;
+}
+
+.navbar-category .nav-xshop-container .nav-xshop {
+  margin-top: 0;
+  padding-left: 2px;
+}
+
+.navbar-category.nav-sprite .nav-xshop-container .nav-xshop {
+  display: flex;
+  position: static;
+  float: none;
+  flex: 1 1 auto;
+  flex-flow: row wrap;
+  align-items: flex-end;
+}
+
+.nav-left {
+  margin-right: 0;
+  max-height: 39px;
+  position: relative;
+  width: auto;
+  display: inline-block;
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  position: static;
+  float: none;
+}
+
+.nav-fill {
+  width: auto;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.navbar-category .nav-fill,
+.navbar-category .nav-left,
+.navbar-category .nav-right {
+  max-height: 39px;
+}
+
+.navbar-category .nav-fill {
+  display: flex;
+  position: static;
+  float: none;
+  flex: 1 1 auto;
+}
+
+.nav-ul {
+  display: contents;
+}
+
+.nav-ul .nav-li {
+  list-style-type: none;
+}
+
+.navbar-category.nav-sprite
+  .nav-fill
+  .nav-xshop-container
+  .nav-xshop
+  .nav-ul
+  .nav-li
+  .nav-a {
+  margin: 5px 0 6px 0;
+  padding: 8px 9px;
+}
+
+.nav-xshop .nav-ul .nav-li .nav-a {
+  float: left;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.nav-xshop .nav-ul .nav-li .nav-a:first-of-type {
+  padding-left: 0;
+}
+
+.nav-xshop .nav-ul .nav-li .nav-a,
+.nav-xshop .nav-ul .nav-li .nav-a:link,
+.nav-xshop .nav-ul .nav-li .nav-a:visited {
+  color: #05a;
+  text-decoration: none;
+}
+
+.navbar-category .nav-xshop .nav-ul .nav-li .nav-a {
+  padding: 7px 8px 7px 8px;
+  margin: 1px 2px 12px 1px;
+  color: #fff;
+}
+
+.navbar-category.nav-sprite
+  .nav-xshop-container
+  .nav-xshop
+  .nav-ul
+  .nav-li
+  .nav-a {
+  padding: 8px 9px 8px 9px;
+  scroll-margin: 0;
+  height: 12px;
+  box-sizing: content-box;
+}
+
+.navbar-category.nav-sprite
+  .nav-xshop-container
+  .nav-xshop
+  .nav-ul
+  .nav-li
+  .nav-a,
+.navbar-category.nav-sprite
+  .nav-xshop-container
+  .nav-xshop
+  .nav-ul
+  .nav-li
+  .nav-a:active,
+.navbar-category.nav-sprite
+  .nav-xshop-container
+  .nav-xshop
+  .nav-ul
+  .nav-li
+  .nav-a:focus,
+.navbar-category.nav-sprite
+  .nav-xshop-container
+  .nav-xshop
+  .nav-ul
+  .nav-li
+  .nav-a:hover {
+  margin: 5px 1px 6px 0;
+}
+
+.navbar-category.nav-sprite
+  .nav-fill
+  .nav-xshop-container
+  .nav-xshop
+  .nav-ul
+  .nav-li
+  .nav-a:active,
+.navbar-category.nav-sprite
+  .nav-fill
+  .nav-xshop-container
+  .nav-xshop
+  .nav-ul
+  .nav-li
+  .nav-a:hover,
+.navbar-category.nav-sprite
+  .nav-fill
+  .nav-xshop-container
+  .nav-xshop
+  .nav-ul
+  .nav-li
+  .nav-a:active,
+.navbar-category.nav-sprite
+  .nav-fill
+  .nav-xshop-container
+  .nav-xshop
+  .nav-ul
+  .nav-li
+  .nav-a:hover {
+  margin: 0;
+  padding: 12px 8px 13px 8px;
+}
+
+.navbar-category.nav-sprite
+  .nav-xshop-container
+  .nav-xshop
+  .nav-ul
+  .nav-li
+  .nav-a:active,
+.navbar-category.nav-sprite
+  .nav-xshop-container
+  .nav-xshop
+  .nav-ul
+  .nav-li
+  .nav-a:hover {
+  padding: 7px 8px 7px 8px;
+  box-shadow: none;
+}
+
+.navbar-category
+  .nav-main.nav-sprite
+  .nav-xshop-container
+  .nav-xshop
+  .nav-ul
+  .nav-li
+  .nav-a,
+.navbar-category.nav-sprite
+  .nav-xshop-container
+  .nav-xshop
+  .nav-ul
+  .nav-li
+  .nav-a:active,
+.navbar-category.nav-sprite
+  .nav-xshop-container
+  .nav-xshop
+  .nav-ul
+  .nav-li
+  .nav-a:focus,
+.navbar-category.nav-sprite
+  .nav-xshop-container
+  .nav-xshop
+  .nav-ul
+  .nav-li
+  .nav-a:hover {
+  margin: 5px 1px 6px 0;
+}
+
+.navbar-category.bold-focus-hover
+  .nav-xshop-container
+  .nav-xshop
+  .nav-ul
+  .nav-li
+  .nav-a:hover {
+  border-color: #fff;
+}
+
+.navbar-category .nav-xshop-container .nav-xshop .nav-ul .nav-li .nav-a:hover {
+  margin-top: 5px;
+}
+
+.navbar-category .nav-xshop-container .nav-xshop .nav-ul .nav-li .nav-a {
+  margin-top: 6px;
+}
+
+.navbar-category .nav-xshop .nav-ul .nav-li .nav-a:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: none;
+}
+
+.navbar-category .nav-xshop .nav-ul .nav-li .nav-a:active,
+.navbar-category .nav-xshop .nav-ul .nav-li .nav-a:hover {
+  text-decoration: none;
+  margin: 0 1px 10px 0;
+  border: 1px solid;
+  border-radius: 2px;
+}
+
+a.nav-hamburger-menu {
+  float: left;
+  margin: 7px 7px 8px 7px;
+  padding: 8px 8px 8px 8px;
+  width: 38px;
+  height: 36px;
+  font-size: 25px;
+  color: #fff;
+  border-radius: 3px;
+  border: 1px solid #666;
+}
+
+.navbar-category .nav-hamburger-menu:active,
+.navbar-category .nav-hamburger-menu:hover {
+  border: 1px solid;
+  border-radius: 2px;
+  border-color: #fff;
+  outline: 0;
+  box-shadow: none;
+  padding: 7px 8px 7px 8px;
+}
+
+.navbar-category .nav-hamburger-menu {
+  align-items: center;
+  width: auto;
+  height: auto;
+  border: none;
+  text-decoration: none;
+  padding: 8px 9px 8px 9px;
+  margin: 0;
+}
+
+.navbar-category .nav-hamburger-menu,
+.navbar-category .nav-hamburger-menu .hm-icon {
+  display: flex;
+  position: static;
+  float: none;
+}
+
+.navbar-category .nav-hamburger-menu .hm-icon-label {
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 14px;
+  padding-left: 5px;
+  white-space: nowrap;
+}
+
+.navbar-category .nav-hamburger-menu .hm-icon {
+  width: 24px;
+  height: 24px;
+  background-position: -172px -255px;
+}
+
+@media (min-width: 1100px) {
+  .nav-sprite {
+    padding-left: 11px;
+  }
+}

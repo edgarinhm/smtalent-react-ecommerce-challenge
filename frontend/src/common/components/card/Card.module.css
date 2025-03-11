@@ -1,0 +1,13 @@
+.card {
+  display: flex;
+  flex-flow: column;
+  background-color: #fff;
+  overflow: auto;
+  padding: 20px 0 15px 0;
+}
+
+.card-header,
+.card-footer {
+  padding: 0 20px;
+  padding-bottom: 10px;
+}

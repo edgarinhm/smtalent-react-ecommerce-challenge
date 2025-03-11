@@ -1,0 +1,85 @@
+.card-container {
+  padding: 0 0.75rem 0;
+  margin: 0.75rem 0;
+  container-type: inline-size;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  container-type: inline-size;
+}
+
+button.card-footer-action-buttons {
+  line-height: 29px;
+  height: 100%;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.thumbail {
+  overflow: hidden;
+}
+
+.thumbail img {
+  inline-size: 100%;
+  aspect-ratio: 1;
+  display: block;
+  object-fit: cover;
+  transition: scale 0.5s ease-in-out;
+}
+
+.content {
+  flex: 1;
+  padding: 1.25rem;
+}
+
+@container (inline-size > 300px) {
+  .card-grid {
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  }
+
+  .card-grid > div {
+    flex-flow: row;
+  }
+
+  .thumbail {
+    inline-size: max(100px, 15cqi);
+  }
+}
+
+@container (inline-size > 400px) {
+  .card-grid {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
+
+  .thumbail {
+    inline-size: max(200px, 20cqi);
+    block-size: 100%;
+  }
+
+  .thumbail img {
+    height: 100%;
+  }
+}
+
+@container (inline-size > 900px) {
+  .card-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .card-grid > div {
+    flex-flow: column;
+  }
+
+  .thumbail {
+    inline-size: 100%;
+    block-size: auto;
+  }
+
+  .thumbail img {
+    aspect-ratio: 4/3;
+    object-fit: contain;
+  }
+}
