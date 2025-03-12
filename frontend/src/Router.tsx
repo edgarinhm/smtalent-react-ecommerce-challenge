@@ -9,11 +9,19 @@ export const homeRoute = {
 };
 
 export const shippingCartRoute = {
-  path: "/cart",
+  path: "cart",
 };
 
 export const loginRoute = {
-  path: "/login",
+  path: "login",
+};
+
+export const appRoute = {
+  path: "ap",
+};
+
+export const gatewayRoute = {
+  path: "gp",
 };
 
 const homeRoutes = {
@@ -31,15 +39,21 @@ const homeRoutes = {
   ],
 };
 
-const shoppingCardRoutes = {
-  path: shippingCartRoute.path,
-  async lazy() {
-    const { ShoppingCart } = await import(
-      "./components/shopping-cart/ShoppingCart"
-    );
-    return { Component: ShoppingCart };
-  },
-  hydrateFallbackElement: <Spinner />,
+const shoppingCartRoutes = {
+  path: gatewayRoute.path,
+  element: <Layout />,
+  children: [
+    {
+      path: shippingCartRoute.path,
+      async lazy() {
+        const { ShoppingCart } = await import(
+          "./components/shopping-cart/ShoppingCart"
+        );
+        return { Component: ShoppingCart };
+      },
+      hydrateFallbackElement: <Spinner />,
+    },
+  ],
 };
 
 const notFoundRoutes = {
@@ -52,9 +66,14 @@ const loginRoutes = {
   element: <Login />,
 };
 
+const publicAppRoutes = {
+  path: appRoute.path,
+  children: [loginRoutes],
+};
+
 export const router = createBrowserRouter([
   homeRoutes,
-  shoppingCardRoutes,
+  shoppingCartRoutes,
   notFoundRoutes,
-  loginRoutes,
+  publicAppRoutes,
 ]);

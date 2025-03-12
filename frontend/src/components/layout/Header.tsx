@@ -1,6 +1,13 @@
 import { NavLink } from "react-router-dom";
 import styles from "./Header.module.css";
 import useCartStorage from "../../common/state-management/cart-storage";
+import {
+  homeRoute,
+  loginRoute,
+  appRoute,
+  shippingCartRoute,
+  gatewayRoute,
+} from "../../Router";
 
 export const Header = () => {
   const { getCartCount } = useCartStorage();
@@ -27,7 +34,7 @@ export const Header = () => {
           <div className={`${styles["nav-left"]}`}>
             <div id="nav-logo" className={`${styles["nav-logo"]}`}>
               <NavLink
-                to={"/"}
+                to={homeRoute.path}
                 className={`${styles["nav-logo-link"]} ${styles["nav-progressive-attribute"]}`}
                 aria-label="Poweredge"
               >
@@ -41,7 +48,7 @@ export const Header = () => {
           <div className={`${styles["nav-right"]}`}>
             <div className={`${styles["nav-tools"]}`}>
               <NavLink
-                to={"/"}
+                to={`${appRoute.path}/${loginRoute.path}`}
                 className={`${styles["nav-a"]} ${styles["nav-a-2"]} ${styles["nav-link-accountList"]}`}
                 aria-label="Poweredge"
               >
@@ -58,7 +65,7 @@ export const Header = () => {
                 </span>
               </NavLink>
               <NavLink
-                to={"/cart"}
+                to={`${gatewayRoute.path}/${shippingCartRoute.path}`}
                 className={`${styles["nav-a"]} ${styles["nav-a-2"]} ${styles["nav-cart"]}`}
                 aria-label={`${getCartCountLabel(
                   getCartCount()
