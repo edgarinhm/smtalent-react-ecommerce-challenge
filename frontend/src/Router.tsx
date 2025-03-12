@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Layout from "./components/layout/Layout";
 import { Spinner } from "./common/components/spinner/Spinner";
 import { LayoutSearch } from "./components/layout/LayoutSearch";
+import { Login } from "./components/login/Login";
 
 export const homeRoute = {
   path: "/",
@@ -9,6 +10,10 @@ export const homeRoute = {
 
 export const shippingCartRoute = {
   path: "/cart",
+};
+
+export const loginRoute = {
+  path: "/login",
 };
 
 const homeRoutes = {
@@ -42,8 +47,14 @@ const notFoundRoutes = {
   element: <LayoutSearch />,
 };
 
+const loginRoutes = {
+  path: loginRoute.path,
+  element: <Login />,
+};
+
 export const router = createBrowserRouter([
   homeRoutes,
   shoppingCardRoutes,
   notFoundRoutes,
+  loginRoutes,
 ]);
