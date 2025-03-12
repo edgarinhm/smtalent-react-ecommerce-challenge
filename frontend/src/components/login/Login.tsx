@@ -1,8 +1,28 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { homeRoute } from "../../Router";
 import styles from "./Login.module.css";
+import { FormEvent, useState } from "react";
+import { ProductsData } from "../../common/mocks/products-data";
 
 export const Login = () => {
+  const [email, setEmail] = useState<string>();
+  const [submitted, setSubmitted] = useState(false);
+
+  const navigate = useNavigate();
+
+  const handleEmailChange = (value: string) => {
+    setEmail(value);
+  };
+
+  const handleSubmit = (event: FormEvent) => {
+    event.preventDefault();
+    setSubmitted(true);
+    if (!email) return;
+    localStorage.setItem("products", JSON.stringify(ProductsData));
+    localStorage.setItem("user", email);
+    navigate(homeRoute.path);
+  };
+
   return (
     <div className={`${styles["login-container"]}`}>
       <Link to={homeRoute.path}>
@@ -14,9 +34,24 @@ export const Login = () => {
       </Link>
       <div className={`${styles["login-box"]}`}>
         <h1>Sign in</h1>
-        <form autoComplete="off">
+        <form autoComplete="off" noValidate onSubmit={handleSubmit}>
           <label htmlFor="email">Email or mobile phone number</label>
-          <input type="text" id="email" name="email" required />
+          <input
+            type="text"
+            id="email"
+            name="email"
+            value={email}
+            onChange={(event) => handleEmailChange(event.target.value)}
+            required
+          />
+          {submitted && !email && (
+            <div className="a-box-inner a-alert-container">
+              <i className="a-icon a-icon-alert"></i>
+              <div className="a-alert-content">
+                Enter your email or mobile phone number
+              </div>
+            </div>
+          )}
           <button type="submit" className={`${styles["login-button"]}`}>
             Continue
           </button>

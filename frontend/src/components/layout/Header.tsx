@@ -8,10 +8,14 @@ import {
   shippingCartRoute,
   gatewayRoute,
 } from "../../Router";
+import { CART_COUNT_LIMIT } from "../../common/constants/cart-constanst";
 
 export const Header = () => {
   const { getCartCount } = useCartStorage();
-  const CART_COUNT_LIMIT = 99;
+
+  const user = localStorage.getItem("user");
+
+  const profileUrl = user ? `/#` : `${appRoute.path}/${loginRoute.path}`;
 
   const getCartCountLabel = (cartCount: number): string => {
     return cartCount > CART_COUNT_LIMIT
@@ -48,7 +52,7 @@ export const Header = () => {
           <div className={`${styles["nav-right"]}`}>
             <div className={`${styles["nav-tools"]}`}>
               <NavLink
-                to={`${appRoute.path}/${loginRoute.path}`}
+                to={profileUrl}
                 className={`${styles["nav-a"]} ${styles["nav-a-2"]} ${styles["nav-link-accountList"]}`}
                 aria-label="Poweredge"
               >
@@ -56,7 +60,7 @@ export const Header = () => {
                   <span
                     className={`${styles["nav-line-1"]} ${styles["nav-link-accountList-nav-line-1"]}`}
                   >
-                    {"Hello, sign in"}
+                    {`Hello, ${user ?? "sign in"}`}
                   </span>
                 </div>
                 <span className={`${styles["nav-line-2"]}`}>
