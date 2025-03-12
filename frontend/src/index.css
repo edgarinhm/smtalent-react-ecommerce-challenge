@@ -80,11 +80,25 @@ ul li {
 }
 
 .poweredge-color-primary {
-  color: var(--poweredge-color-primary, #0f1111);
+  --smtalent-challenge-lib-variant-contained-color: var(
+    --poweredge-color-primary
+  );
 }
 
 .poweredge-color-primary:hover {
   --smtalent-challenge-lib-variant-contained-bg: #ffce12;
+}
+
+.poweredge-button-text {
+  --smtalent-challenge-lib-variant-contained-bg: transparent;
+  --smtalent-challenge-lib-variant-contained-color: #0f1111;
+  --smtalent-challenge-lib-variant-contained-border: #888c8c;
+  border: 1px solid #888c8c !important;
+  background-color: transparent;
+}
+
+.poweredge-button-text:hover {
+  --smtalent-challenge-lib-variant-contained-bg: #f7fafa;
 }
 
 .poweredge-size-micro {
