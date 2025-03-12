@@ -3,6 +3,7 @@ import { homeRoute } from "../../Router";
 import styles from "./Login.module.css";
 import { FormEvent, useState } from "react";
 import { ProductsData } from "../../common/mocks/products-data";
+import { Button } from "@poweredge/smtalent-challenge-lib";
 
 export const Login = () => {
   const [email, setEmail] = useState<string>();
@@ -52,9 +53,15 @@ export const Login = () => {
               </div>
             </div>
           )}
-          <button type="submit" className={`${styles["login-button"]}`}>
+          <Button
+            style={{ textTransform: "none", boxShadow: "none" }}
+            type="submit"
+            variant="floating-action"
+            size="small"
+            className={`poweredge-color-primary ${styles["login-button"]} ${styles["button-span12"]}`}
+          >
             Continue
-          </button>
+          </Button>
         </form>
         <p>
           {`By continuing, you agree to Amazon's `}
@@ -67,12 +74,15 @@ export const Login = () => {
           </a>
           {". "}
         </p>
-        <button
-          className={`${styles["help-link"]}`}
+        <Button
+          style={{ textTransform: "none", boxShadow: "none" }}
+          variant="floating-action"
+          size="small"
+          className={`poweredge-button-text ${styles["help-link"]}  ${styles["button-span12"]}`}
           onClick={() => alert("Help clicked")}
         >
           Need help?
-        </button>
+        </Button>
       </div>
       <div className={`${styles["login-footer"]}`}>
         <a href="https://www.amazon.com/gp/help/customer/display.html?nodeId=508088">
